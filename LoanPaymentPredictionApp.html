@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!-- saved from url=(0101)file:///C:/Users/Erika/Desktop/Data%20Science/Developing%20Data%20Products/LoanPmtAmount/index.html#1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Loan Payment Prediction App</title>
+  
+  <meta name="description" content="Loan Payment Prediction App">
+  <meta name="author" content="Erika Garcia-Boliou">
+  <meta name="generator" content="slidify">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="./LoanPaymentPredictionApp_files/default.css" media="all">
+  <link rel="stylesheet" href="./LoanPaymentPredictionApp_files/phone.css" media="only screen and (max-device-width: 480px)">
+  <link rel="stylesheet" href="./LoanPaymentPredictionApp_files/slidify.css">
+  <link rel="stylesheet" href="./LoanPaymentPredictionApp_files/tomorrow.css">
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="slides" src="./LoanPaymentPredictionApp_files/slides.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="order" src="./LoanPaymentPredictionApp_files/order.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="slide_config" src="./LoanPaymentPredictionApp_files/slide_config.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="modernizr.custom.45394" src="./LoanPaymentPredictionApp_files/modernizr.custom.45394.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="hammer" src="./LoanPaymentPredictionApp_files/hammer.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="slide-controller" src="./LoanPaymentPredictionApp_files/slide-controller.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="slide-deck" src="./LoanPaymentPredictionApp_files/slide-deck.js"></script><!--<base target="_blank">--><base href="." target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel="stylesheet" href="./LoanPaymentPredictionApp_files/bootstrap.css">
+<link rel="stylesheet" href="./LoanPaymentPredictionApp_files/ribbons.css">
+<link rel="stylesheet" href="./LoanPaymentPredictionApp_files/SFormat.css">
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="./LoanPaymentPredictionApp_files/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" src="./LoanPaymentPredictionApp_files/require-1.0.8.min.js">
+  </script>
+  
+  
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuTitle {background-color: #CCCCCC; margin: -1px -1px 1px -1px; text-align: center; font-style: italic; font-size: 80%; color: #444444; padding: 2px 0; overflow: hidden}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><link rel="stylesheet" href="./LoanPaymentPredictionApp_files/css"><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; border: 0; padding: 0; margin: 0}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0 !important; padding: 0 !important; margin: 0 !important; vertical-align: 0 !important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap ! important}
+.MathJax img {display: inline ! important; float: none ! important}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block; overflow: hidden; width: 1px; height: 60ex}
+.MathJax .MathJax_EmBox {display: block; overflow: hidden; width: 1px; height: 60em}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff') format('woff'), url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Main; src: url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff') format('woff'), url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf') format('opentype'); font-weight: bold}
+@font-face {font-family: MathJax_Main; src: url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff') format('woff'), url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Math; src: url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff') format('woff'), url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Caligraphic; src: url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff') format('woff'), url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff') format('woff'), url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff') format('woff'), url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff') format('woff'), url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff') format('woff'), url('http://cdn.mathjax.org/mathjax/2.0-latest/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body style="opacity: 0" class="loaded"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+  <slides class="layout-widescreen" style="-webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground current" data-slide-num="1" data-total-slides="5">
+  <hgroup class="auto-fadein">
+    <h1>Loan Payment Prediction App</h1>
+    <h2>Predicts monthly loan payment and final monthly payment</h2>
+    <p>Erika Garcia-Boliou<br></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="next" id="slide-1" style="background:;" data-slide-num="2" data-total-slides="5">
+  <article data-timings="">
+    <p></p>
+
+<h1>
+<ins>Below are the formulas:</ins>
+</h1>
+
+<h3>Monthly Payment (rounded to nearest cent):</h3>
+
+<p><span class="MathJax_Preview"></span><div class="MathJax_Display" role="textbox" aria-readonly="true" style="text-align: center;"><span class="MathJax" id="MathJax-Element-1-Frame"><nobr><span class="math" id="MathJax-Span-1"><span style="display: inline-block; position: relative; width: 6.005em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(2.537em 1000em 5.081em -0.21em); top: -4em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mfrac" id="MathJax-Span-3" style="padding-left: 0.12em; padding-right: 0.12em;"><span style="display: inline-block; position: relative; width: 5.765em; height: 0px;"><span style="position: absolute; clip: rect(1.789em 1000em 2.697em -0.309em); top: -3.253em; left: 50%; margin-left: -0.532em;"><span class="mrow" id="MathJax-Span-4"><span class="mi" id="MathJax-Span-5" style="font-family: MathJax_Math; font-style: italic;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.12em;"></span></span><span class="mi" id="MathJax-Span-6" style="font-family: MathJax_Math; font-style: italic;">i</span></span><span style="display: inline-block; width: 0px; height: 2.576em;"></span></span><span style="position: absolute; clip: rect(1.823em 1000em 3.083em -0.247em); top: -2.002em; left: 50%; margin-left: -2.823em;"><span class="mrow" id="MathJax-Span-7"><span class="mn" id="MathJax-Span-8" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-9" style="font-family: MathJax_Main; padding-left: 0.222em;">−</span><span class="mo" id="MathJax-Span-10" style="font-family: MathJax_Main; padding-left: 0.222em;">(</span><span class="mn" id="MathJax-Span-11" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-12" style="font-family: MathJax_Main; padding-left: 0.222em;">+</span><span class="mi" id="MathJax-Span-13" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.222em;">i</span><span class="msubsup" id="MathJax-Span-14"><span style="display: inline-block; position: relative; width: 1.468em; height: 0px;"><span style="position: absolute; clip: rect(1.863em 1000em 3.083em -0.275em); top: -2.723em; left: 0em;"><span class="mo" id="MathJax-Span-15" style="font-family: MathJax_Main;">)</span><span style="display: inline-block; width: 0px; height: 2.723em;"></span></span><span style="position: absolute; top: -2.943em; left: 0.403em;"><span class="texatom" id="MathJax-Span-16"><span class="mrow" id="MathJax-Span-17"><span class="mo" id="MathJax-Span-18" style="font-size: 70.7%; font-family: MathJax_Main;">−</span><span class="mi" id="MathJax-Span-19" style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;">n</span></span></span><span style="display: inline-block; width: 0px; height: 2.466em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.723em;"></span></span><span style="position: absolute; clip: rect(0.89em 1000em 1.17em -0.33em); top: -1.28em; left: 0em;"><span style="border-left: 5.765em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.06em; vertical-align: 0em;"></span><span style="display: inline-block; width: 0px; height: 1.06em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 4em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 2.974em; vertical-align: -1.25em;"></span></span></nobr></span></div><script type="math/tex; mode=display" id="MathJax-Element-1">\frac{T i}{1 - (1 + i)^{-n}}</script></p>
+
+<p style="color:green;">
+  Where: <br>
+    T = Total Loan Payment <br>
+    i = Effective Interest Rate (input is interest rate per YEAR while effective interest rate is per MONTH)<br>
+    n = Number of Payments
+    </p>
+
+<p></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="far-next" id="slide-2" style="background:;" data-slide-num="3" data-total-slides="5">
+  <article data-timings="">
+    <p></p>
+
+<h3 style="color:green;">Final Payment (rounded to nearest cent):</h3>
+
+<p><span class="MathJax_Preview"></span><div class="MathJax_Display" role="textbox" aria-readonly="true" style="text-align: center;"><span class="MathJax" id="MathJax-Element-2-Frame"><nobr><span class="math" id="MathJax-Span-20"><span style="display: inline-block; position: relative; width: 11.233em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.089em 1000em 3.655em -0.487em); top: -2.786em; left: 0em;"><span class="mrow" id="MathJax-Span-21"><span class="mi" id="MathJax-Span-22" style="font-family: MathJax_Math; font-style: italic;">E<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.026em;"></span></span><span class="mo" id="MathJax-Span-23" style="font-family: MathJax_Main; padding-left: 0.278em;">=</span><span class="mfrac" id="MathJax-Span-24" style="padding-left: 0.398em; padding-right: 0.12em;"><span style="display: inline-block; position: relative; width: 7.148em; height: 0px;"><span style="position: absolute; clip: rect(1.823em 1000em 3.209em -0.468em); top: -3.52em; left: 50%; margin-left: -3.514em;"><span class="mrow" id="MathJax-Span-25"><span class="mi" id="MathJax-Span-26" style="font-family: MathJax_Math; font-style: italic;">Q</span><span class="mo" id="MathJax-Span-27" style="font-family: MathJax_Main;">(</span><span class="mn" id="MathJax-Span-28" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-29" style="font-family: MathJax_Main; padding-left: 0.222em;">−</span><span class="mo" id="MathJax-Span-30" style="font-family: MathJax_Main; padding-left: 0.222em;">(</span><span class="mn" id="MathJax-Span-31" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-32" style="font-family: MathJax_Main; padding-left: 0.222em;">+</span><span class="mi" id="MathJax-Span-33" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.222em;">i</span><span class="msubsup" id="MathJax-Span-34"><span style="display: inline-block; position: relative; width: 1.457em; height: 0px;"><span style="position: absolute; clip: rect(1.863em 1000em 3.209em -0.463em); top: -2.786em; left: 0em;"><span class="mo" id="MathJax-Span-35" style="font-family: MathJax_Main;">)</span><span style="display: inline-block; width: 0px; height: 2.786em;"></span></span><span style="position: absolute; top: -2.975em; left: 0.403em;"><span class="texatom" id="MathJax-Span-36"><span class="mrow" id="MathJax-Span-37"><span class="mo" id="MathJax-Span-38" style="font-size: 70.7%; font-family: MathJax_Main;">−</span><span class="mi" id="MathJax-Span-39" style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;">n</span></span></span><span style="display: inline-block; width: 0px; height: 2.498em;"></span></span></span></span><span class="mo" id="MathJax-Span-40" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.786em;"></span></span><span style="position: absolute; clip: rect(1.779em 1000em 2.797em -0.497em); top: -1.927em; left: 50%; margin-left: -0.173em;"><span class="mi" id="MathJax-Span-41" style="font-family: MathJax_Math; font-style: italic;">i</span><span style="display: inline-block; width: 0px; height: 2.613em;"></span></span><span style="position: absolute; clip: rect(0.827em 1000em 1.245em -0.518em); top: -1.292em; left: 0em;"><span style="border-left: 7.148em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.25px; vertical-align: 0em;"></span><span style="display: inline-block; width: 0px; height: 1.072em;"></span></span></span></span><span class="mo" id="MathJax-Span-42" style="font-family: MathJax_Main; padding-left: 0.222em;">−</span><span class="mi" id="MathJax-Span-43" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.222em;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.12em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.786em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 2.896em; vertical-align: -0.936em;"></span></span></nobr></span></div><script type="math/tex; mode=display" id="MathJax-Element-2">E = \frac{Q(1-(1+i)^{-n})}{i} - T</script>
+    <span class="MathJax_Preview"></span><div class="MathJax_Display" role="textbox" aria-readonly="true" style="text-align: center;"><span class="MathJax" id="MathJax-Element-3-Frame"><nobr><span class="math" id="MathJax-Span-44"><span style="display: inline-block; position: relative; width: 5.933em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.823em 1000em 3.209em -0.468em); top: -2.786em; left: 0em;"><span class="mrow" id="MathJax-Span-45"><span class="mi" id="MathJax-Span-46" style="font-family: MathJax_Math; font-style: italic;">Q</span><span class="mo" id="MathJax-Span-47" style="font-family: MathJax_Main; padding-left: 0.222em;">−</span><span class="mi" id="MathJax-Span-48" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.222em;">E<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.026em;"></span></span><span class="mo" id="MathJax-Span-49" style="font-family: MathJax_Main;">(</span><span class="mn" id="MathJax-Span-50" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-51" style="font-family: MathJax_Main; padding-left: 0.222em;">+</span><span class="mi" id="MathJax-Span-52" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.222em;">i</span><span class="msubsup" id="MathJax-Span-53"><span style="display: inline-block; position: relative; width: 0.881em; height: 0px;"><span style="position: absolute; clip: rect(1.863em 1000em 3.209em -0.463em); top: -2.786em; left: 0em;"><span class="mo" id="MathJax-Span-54" style="font-family: MathJax_Main;">)</span><span style="display: inline-block; width: 0px; height: 2.786em;"></span></span><span style="position: absolute; top: -2.975em; left: 0.403em;"><span class="mi" id="MathJax-Span-55" style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;">n</span><span style="display: inline-block; width: 0px; height: 2.498em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.786em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.432em; vertical-align: -0.381em;"></span></span></nobr></span></div><script type="math/tex; mode=display" id="MathJax-Element-3">Q - E(1+i)^n</script>
+</p>
+
+<p style="color:green;">
+  Where: <br>
+    Q = Monthly Payment <br>
+    T = Total Loan Payment <br>
+    i = Effective Interest Rate (input is interest rate per YEAR while effective interest rate is per MONTH) <br>
+    n = Number of Payments
+    </p>
+
+<p></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;" data-slide-num="4" data-total-slides="5">
+  <article data-timings="">
+    <p>
+<img src="./LoanPaymentPredictionApp_files/2016-08-21.png" alt="width">
+</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;" data-slide-num="5" data-total-slides="5">
+  <article data-timings="">
+    <p><img src="./LoanPaymentPredictionApp_files/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="750px" style="display: block; margin: auto;"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id="io2012-ptoc" style="display:none;">
+    <ul>
+      <li>
+      <a href="file:///C:/Users/Erika/Desktop/Data%20Science/Developing%20Data%20Products/LoanPmtAmount/index.html#" target="_self" rel="tooltip" data-slide="1" data-original-title="NA">
+         1
+      </a>
+    </li>
+    <li>
+      <a href="file:///C:/Users/Erika/Desktop/Data%20Science/Developing%20Data%20Products/LoanPmtAmount/index.html#" target="_self" rel="tooltip" data-slide="2" data-original-title="NA">
+         2
+      </a>
+    </li>
+    <li>
+      <a href="file:///C:/Users/Erika/Desktop/Data%20Science/Developing%20Data%20Products/LoanPmtAmount/index.html#" target="_self" rel="tooltip" data-slide="3" data-original-title="NA">
+         3
+      </a>
+    </li>
+    <li>
+      <a href="file:///C:/Users/Erika/Desktop/Data%20Science/Developing%20Data%20Products/LoanPmtAmount/index.html#" target="_self" rel="tooltip" data-slide="4" data-original-title="NA">
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+
+  <!-- Load Javascripts for Widgets -->
+  <script src="./LoanPaymentPredictionApp_files/bootstrap.min.js"></script>
+<script src="./LoanPaymentPredictionApp_files/bootbox.min.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config;executed=true">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="./LoanPaymentPredictionApp_files/MathJax.js"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="./LoanPaymentPredictionApp_files/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  <div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Main, sans-serif;"></div></body></html>
